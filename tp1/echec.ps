@@ -1,0 +1,91 @@
+/pionr {
+newpath
+0 0 moveto
+30 0 lineto
+18 30 lineto
+22 35 lineto
+15 40 lineto
+8 35 lineto
+12 30 lineto
+0 0 lineto
+1 0 0 setrgbcolor
+fill 
+closepath
+stroke
+}def
+
+/pionv {
+newpath
+0 0 moveto
+30 0 lineto
+18 30 lineto
+22 35 lineto
+15 40 lineto
+8 35 lineto
+12 30 lineto
+0 0 lineto
+0 1 0 setrgbcolor
+fill 
+closepath
+stroke
+}def
+
+/echiquier {
+gsave    % We're mucking about with graphics state... save the orig
+100 100 translate
+400 400  scale          % make the image 1 inch square
+8                    % 8 columns in the image
+8                    % 8 rows in the image
+1                    % 1-bit per pixel: black and white
+[8 0 0 8 0 0]        % map the unit square to (0, 0) - (8, 8)
+{<55AA55AA55AA55AA>} % the image data as a hex-encoded string
+image                % actually draw the image
+grestore
+
+gsave
+
+newpath
+100 100 moveto
+100 500 lineto
+500 500 lineto
+500 100 lineto
+closepath
+stroke
+grestore
+}def
+
+gsave
+newpath
+200 200  echiquier stroke
+closepath
+
+newpath
+
+gsave
+110 105 translate
+0 0 pionr stroke
+grestore
+gsave
+160 205 translate
+0 0 pionr stroke
+grestore
+gsave
+310 155 translate
+0 0 pionr stroke
+grestore
+gsave
+160 405 translate
+0 0 pionv stroke
+grestore
+gsave
+360 405 translate
+0 0 pionv stroke
+grestore
+gsave
+460 305 translate
+0 0 pionv stroke
+grestore
+closepath
+grestore
+
+showpage

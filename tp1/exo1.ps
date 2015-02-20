@@ -1,0 +1,52 @@
+/s {stroke} def
+/gs {gsave} def
+/gr {grestore} def
+/f {fill} def
+
+/pokeball { 
+150 150 100 0 180 arc
+gs 
+1 0 0 setrgbcolor
+f
+gr
+s
+
+50 150 moveto
+150 150 100 180 360 arc
+175 150 moveto 
+150 150 25 0 360 arc
+gs 
+1 1 1 setrgbcolor
+f 
+gr
+s
+
+49 152 moveto
+124 152 lineto
+49 146 moveto
+124 146 lineto
+174 152 moveto
+251 152 lineto
+174 146 moveto
+251 146 lineto
+s
+
+160 150 moveto
+150 150 10 0 360 arc
+gs
+0 0 0 setrgbcolor
+f
+gr
+s
+} def
+
+0 90 360 {
+		  newpath
+gs
+300 300 translate
+rotate
+100 100 pokeball s
+gr
+} for
+
+showpage
